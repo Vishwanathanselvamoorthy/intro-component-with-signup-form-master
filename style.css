@@ -1,0 +1,80 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+.container {
+  background-image: url("./images/bg-intro-mobile.png");
+  width: 100%;
+  min-height: 100vh;
+  background-color: hsl(0, 100%, 74%);
+  text-align: center;
+  padding: 60px 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.container h1 {
+  font-size: 28px;
+  margin: 25px 0px;
+}
+.container p {
+  font-size: 16px;
+  margin: 0px 0px 60px 0px;
+  letter-spacing: 1px;
+}
+.container .blue-box {
+  background-color: hsl(248, 32%, 49%);
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.container .blue-box p {
+  padding: 30px;
+  margin: 0px;
+}
+.container .form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 01); /* Add a box shadow */
+}
+
+.container .form-container input,
+button {
+  width: 100%;
+  margin: 10px 0px;
+  padding: 20px;
+  border-radius: 6px;
+  border: none;
+  border: 1px solid gray;
+}
+.container .form-container input::placeholder {
+  font-weight: 700;
+}
+.container .form-container button {
+  background-color: hsl(154, 59%, 51%);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  letter-spacing: 2px;
+}
+.container .form-container p {
+  color: #cfced8;
+  font-size: 15px;
+  margin: 20px 0px;
+  font-weight: 500;
+}
+.container .form-container p span {
+  color: red;
+}
+@media only screen and (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+  }
+}
