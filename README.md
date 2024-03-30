@@ -12,7 +12,7 @@ FormValidator is a simple web application built using HTML, CSS, and JavaScript,
  - CSS
  - JavaScript
 
-[Form Validator Demo](https://intro-component-with-signup-form-master-tawny.vercel.app/) 
+## [Form Validator Demo](https://intro-component-with-signup-form-master-tawny.vercel.app/) 
 
  ## Mobile UI:
 
