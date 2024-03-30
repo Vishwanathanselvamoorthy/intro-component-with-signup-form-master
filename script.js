@@ -33,6 +33,8 @@ const fieldDetails = [
 
 const submitBtn = document.querySelector(".submitBtn");
 
+// EMAIL VALIDATION FUNC
+
 function validateIsEmail(
   inputFieldElement,
   errorImgElement,
@@ -47,11 +49,13 @@ function validateIsEmail(
     showErrorContent(errorImgElement, errorMsgElement, emailErrorMsg);
     return false;
   } else {
-    document.querySelector(errorImgElement).src = "";
-    document.querySelector(errorMsgElement).textContent = "";
+    hideErrorContent(errorImgElement, errorMsgElement);
     return true;
   }
 }
+
+// OTHER FIELDS FUNC
+
 function validateIsEmptyField(
   inputFieldElement,
   errorImgElement,
@@ -64,11 +68,12 @@ function validateIsEmptyField(
     showErrorContent(errorImgElement, errorMsgElement, errorMsg);
     return false;
   } else {
-    document.querySelector(errorImgElement).src = "";
-    document.querySelector(errorMsgElement).textContent = "";
+    hideErrorContent(errorImgElement, errorMsgElement);
     return true;
   }
 }
+
+// SHOW ERROR CONTENT FUNC
 
 function showErrorContent(errorImgElement, errorMsgElement, errorMsg) {
   const img = document.querySelector(errorImgElement);
@@ -78,10 +83,19 @@ function showErrorContent(errorImgElement, errorMsgElement, errorMsg) {
   if (msg) msg.textContent = errorMsg;
 }
 
+// HIDE ERROR  CONTENT FUNC
+
+function hideErrorContent(errorImgElement, errorMsgElement) {
+  document.querySelector(errorImgElement).src = "";
+  document.querySelector(errorMsgElement).textContent = "";
+}
+
+// SUBMIT BUTTON FUNC
+
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
-  let hasErrors = false;
+  let hasErrors = false; // FOR SUCCESS MESSAGE 
 
   fieldDetails.forEach((field) => {
     let inputFieldElement = document.getElementById(field.id);
@@ -95,11 +109,16 @@ submitBtn.addEventListener("click", function (e) {
       errorMsgElement,
       fieldName
     );
+
+    // FOR SUCCESS MESSAGE 
+
     if (!allCredentials) {
       hasErrors = true;
     } else {
       inputFieldElement.value = "";
     }
+
+    // FOR SUCCESS MESSAGE
 
     if (!hasErrors) {
       inputFieldElement.value = "";
