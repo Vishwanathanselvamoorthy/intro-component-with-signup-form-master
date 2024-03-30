@@ -35,12 +35,14 @@
   <body>
     <div class="container">
       <div class="text-contain">
-        <h1>Learn to code by watching others</h1>
-        <p>
-          See how experienced developers solve problems in real-time. Watching
-          scripted tutorials is great, but understanding how developers think is
-          invaluable.
-        </p>
+        <div>
+          <h1>Learn to code by watching others</h1>
+          <p>
+            See how experienced developers solve problems in real-time. Watching
+            scripted tutorials is great, but understanding how developers think
+            is invaluable.
+          </p>
+        </div>
       </div>
       <div class="form-contain">
         <div class="blue-box">
@@ -48,11 +50,37 @@
         </div>
 
         <form class="form-container">
-          <input type="text" placeholder="First Name" />
-          <input type="text" placeholder="Last Name" />
-          <input type="email" placeholder="Email Address" />
-          <input type="password" placeholder="Password" />
-          <button>Claim Your Free Trail</button>
+          <div class="input-contain">
+            <input
+              type="text"
+              class=""
+              id="first-name"
+              placeholder="First Name"
+            />
+            <img class="" id="error-img-1" src="" />
+            <h4 id="error-1" class=""></h4>
+          </div>
+          <div class="input-contain">
+            <input type="text" id="last-name" placeholder="Last Name" />
+
+            <img id="error-img-2" src="" />
+            <h4 id="error-2"></h4>
+          </div>
+          <div class="input-contain">
+            <input type="email" id="email" placeholder="Email Address" />
+
+            <img id="error-img-3" src="" />
+            <h4 id="error-3"></h4>
+          </div>
+          <div class="input-contain">
+            <input type="password" id="password" placeholder="Password" />
+
+            <img id="error-img-4" src="" />
+            <h4 id="error-4"></h4>
+          </div>
+          <span class="successMsg"></span>
+
+          <button class="submitBtn">Claim Your Free Trail</button>
           <p>
             By clicking the button, you are agreeing to our
             <span>Terms and Services</span>
@@ -60,5 +88,6 @@
         </form>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -4,16 +4,19 @@
   box-sizing: border-box;
   font-family: Poppins;
 }
-.container {
+body {
   background-image: url("./images/bg-intro-mobile.png");
-  width: 100%;
-  min-height: 100vh;
   background-color: hsl(0, 100%, 74%);
+  padding: 0px 30px;
+  height: 100vh;
+}
+.container {
   text-align: center;
-  padding: 60px 30px;
+  padding: 30px 10px;
   color: white;
   display: flex;
   flex-direction: column;
+  max-width: 1500px;
 }
 .container h1 {
   font-size: 28px;
@@ -41,6 +44,9 @@
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 01); /* Add a box shadow */
 }
+.container .form-container .input-contain {
+  position: relative;
+}
 
 .container .form-container input,
 button {
@@ -53,6 +59,14 @@ button {
 }
 .container .form-container input::placeholder {
   font-weight: 700;
+}
+.container .form-container img {
+  position: absolute;
+  top: 28px;
+  right: 30px;
+}
+.container .form-container .form-contain span {
+  color: aqua;
 }
 .container .form-container button {
   background-color: hsl(154, 59%, 51%);
@@ -70,11 +84,48 @@ button {
   margin: 20px 0px;
   font-weight: 500;
 }
-.container .form-container p span {
+.container .form-contain .form-container .input-contain #error-1,
+#error-2,
+#error-3,
+#error-4 {
   color: red;
+  text-align: right;
 }
+.hidden {
+  display: none;
+}
+.successMsg {
+  color: rgba(0, 128, 0, 0.7);
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
 @media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .container {
     flex-direction: row;
+    padding: 150px;
+    gap: 50px;
+  }
+  .container .text-contain {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .text-contain h1 {
+    font-size: 50px;
+    text-align: left;
+  }
+  .container .text-contain p {
+    text-align: left;
+  }
+  .container .form-contain {
+    width: 50%;
   }
 }
