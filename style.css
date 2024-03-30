@@ -65,9 +65,7 @@ button {
   top: 28px;
   right: 30px;
 }
-.container .form-container .form-contain span {
-  color: aqua;
-}
+
 .container .form-container button {
   background-color: hsl(154, 59%, 51%);
   color: white;
@@ -82,7 +80,10 @@ button {
   color: #cfced8;
   font-size: 15px;
   margin: 20px 0px;
-  font-weight: 500;
+  font-weight: 600;
+}
+.container .form-contain .form-container p span {
+  color: rgba(255, 0, 0, 0.674);
 }
 .container .form-contain .form-container .input-contain #error-1,
 #error-2,

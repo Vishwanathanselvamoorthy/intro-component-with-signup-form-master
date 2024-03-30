@@ -62,6 +62,8 @@ function validateIsEmptyField(
     showErrorContent(errorImgElement, errorMsgElement, errorMsg);
     return false;
   } else {
+    document.querySelector(errorImgElement).src = "";
+    document.querySelector(errorMsgElement).textContent = "";
     return true;
   }
 }
@@ -76,22 +78,33 @@ function showErrorContent(errorImgElement, errorMsgElement, errorMsg) {
 
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
+
+  let hasErrors = false;
+
   fieldDetails.forEach((field) => {
-    const inputFieldElement = document.getElementById(field.id).value;
+    let inputFieldElement = document.getElementById(field.id);
     const errorImgElement = field.errorImg;
     const errorMsgElement = field.errorMsg;
     const fieldName = field.fieldOf;
 
     const allCredentials = field.validateFieldFunc(
-      inputFieldElement,
+      inputFieldElement.value,
       errorImgElement,
       errorMsgElement,
       fieldName
     );
+    if (!allCredentials) {
+      hasErrors = true;
+    } else {
+      inputFieldElement.value = "";
+    }
 
-    if (allCredentials) {
+    if (!hasErrors) {
+      inputFieldElement.value = "";
       document.querySelector(".successMsg").textContent =
         "All Credentials are updated";
+    } else {
+      document.querySelector(".successMsg").textContent = "";
     }
   });
 });
