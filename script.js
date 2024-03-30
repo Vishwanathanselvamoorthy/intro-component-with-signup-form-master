@@ -47,6 +47,8 @@ function validateIsEmail(
     showErrorContent(errorImgElement, errorMsgElement, emailErrorMsg);
     return false;
   } else {
+    document.querySelector(errorImgElement).src = "";
+    document.querySelector(errorMsgElement).textContent = "";
     return true;
   }
 }
